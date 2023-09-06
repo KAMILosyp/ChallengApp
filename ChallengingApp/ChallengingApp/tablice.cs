@@ -1,4 +1,4 @@
-int number = 4566;
+﻿int number = 4566;
 string numberInString = number.ToString();
 char[] letters = numberInString.ToCharArray();
 
