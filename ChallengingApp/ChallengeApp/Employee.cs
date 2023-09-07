@@ -3,20 +3,25 @@ using System.Diagnostics;
 
 namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
-        private readonly char sex = 'M';
-
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname)
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
         {
-            this.Name = name;
-            this.Surname = surname;
-            this.sex = 'K';    
         }
-        public string Name { get; private set; }
-
-        public string Surname { get; private set; 
+        public Employee(string name, string surname)
+            : this(name, surname,'x')
+        { 
+        }
+        public Employee(string name)
+          : this(name, "no surname", 'x')
+        { 
+        }
+        public Employee()
+          : this("no name", "no surname", 'x')
+        {
+        }
         public void AddGrade(char grade)
         {
            switch(grade)
@@ -70,7 +75,6 @@ namespace ChallengeApp
             float result = (float)grade;
             this.AddGrade(result);
         }
-
 
         public Statistics GetStatistics()
         {
