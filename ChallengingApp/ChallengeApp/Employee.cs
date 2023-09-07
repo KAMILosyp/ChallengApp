@@ -5,16 +5,18 @@ namespace ChallengeApp
 {
     public class Employee
     {
+        private readonly char sex = 'M';
+
         private List<float> grades = new List<float>();
-        public Employee()
+        public Employee(string name, string surname)
         {
-            
+            this.Name = name;
+            this.Surname = surname;
+            this.sex = 'K';    
         }
         public string Name { get; private set; }
 
-        public string Surname { get; private set; }
-    
-
+        public string Surname { get; private set; 
         public void AddGrade(char grade)
         {
            switch(grade)
@@ -38,9 +40,7 @@ namespace ChallengeApp
                 default:
                     this.AddGrade(0);
                     break;
-            }
-               
-
+            }             
         }
         public void AddGrade(float grade)
         {
@@ -50,16 +50,19 @@ namespace ChallengeApp
             }
             else
             {
-                Console.WriteLine(" Invalid over 100");
+                throw new Exception("Invalid grade value");
+                
             }
-        }
-
-        
+        } 
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
                 this.AddGrade(result);
+            }
+            else
+            {
+                throw new Exception("String is not float");
             }
         }
         public void AddGrade(double grade)
@@ -100,10 +103,9 @@ namespace ChallengeApp
                     statistics.AverageLetter = 'D';
                     break;
                 default:
-                    statistics.AverageLetter = 'E';
+                    throw new Exception("Invalid grade value");
                     break;
             }
-
             return statistics;
         }
 

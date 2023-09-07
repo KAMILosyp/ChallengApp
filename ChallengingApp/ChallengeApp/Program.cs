@@ -6,7 +6,8 @@ Console.WriteLine(" Witamy w Programie 123 który ocenia Pracowników ");
 Console.WriteLine("=================================================");
 Console.WriteLine();
 
-var employee = new Employee();
+var employee = new Employee("Wojtek", "Booo");
+
 
 while (true)
 {
@@ -16,7 +17,15 @@ while (true)
     {
         break;
     }
-    employee.AddGrade( input );
+
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"exception catched: {e.Message}");
+    }
 }
 
 var statistics = employee.GetStatistics();
