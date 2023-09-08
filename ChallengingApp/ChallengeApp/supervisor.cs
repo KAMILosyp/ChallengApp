@@ -1,28 +1,27 @@
 ﻿
-using System.Diagnostics;
 
 namespace ChallengeApp
 {
-    public class Employee : IEmployee
+    public class Supervisor : IEmployee
     {
         private List<float> grades = new List<float>();
-        
-        public Employee(string name, string surname)
+
+        public Supervisor(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
         }
         public string Name { get; private set; }
 
-        public string Surname { get; private set; } 
+        public string Surname { get; private set; }
 
         public void AddGrade(char grade)
         {
-           switch(grade)
+            switch (grade)
             {
                 case 'A':
                 case 'a':
-                    this.AddGrade(100); 
+                    this.AddGrade(100);
                     break;
                 case 'B':
                     this.AddGrade(80);
@@ -39,20 +38,20 @@ namespace ChallengeApp
                 default:
                     this.AddGrade(0);
                     break;
-            }             
+            }
         }
         public void AddGrade(float grade)
         {
-            if( grade >= 0 && grade <= 100)
+            if (grade >= 0 && grade <= 100)
             {
                 this.grades.Add(grade);
             }
             else
             {
                 throw new Exception("Invalid grade value");
-                
+
             }
-        } 
+        }
         public void AddGrade(int grade)
         { this.grades.Add(grade); }
         public void AddGrade(string grade)
@@ -140,7 +139,7 @@ namespace ChallengeApp
             }
             statistics.Average = statistics.Average / this.grades.Count;
 
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
                     statistics.AverageLetter = 'A';
@@ -156,7 +155,7 @@ namespace ChallengeApp
                     break;
                 default:
                     throw new Exception("Invalid grade value");
-                    break;
+                   
             }
             return statistics;
         }
