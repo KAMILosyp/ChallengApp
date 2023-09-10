@@ -9,8 +9,8 @@ namespace ChallengeApp
 
          void AddGrade(char grade);
          void AddGrade(float grade);
-        void AddGrade(string grade);
-    
+         void AddGrade(string grade);
+         void AddGrade(int grade);
          void AddGrade(double grade);
 
 
