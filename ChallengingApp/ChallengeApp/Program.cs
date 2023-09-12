@@ -15,8 +15,8 @@ Console.WriteLine("For Example:6 = 100, 5 = 80, 4 = 60, 3 = 40 evry +/- is +5 -5
 Console.WriteLine("for summary press Q/q");
 Console.WriteLine("*****************************************");
 
-var supervisor = new Supervisor("Kamil", "Kolo");
-
+var employee = new EmployeeInFile("Kamil", "Kolo");
+employee.AddGrade(0.5f);
 while (true)
 {
     Console.WriteLine("Provide another grade:");
@@ -27,7 +27,7 @@ while (true)
     }
     try
     {
-        supervisor.AddGrade(input);
+        employee.AddGrade(input);
     }
     catch (Exception ex)
     {
@@ -35,7 +35,7 @@ while (true)
 
     }
 }
-    var statistics = supervisor.GetStatistics();
+    var statistics = employee.GetStatistics();
     Console.WriteLine($"Average: {statistics.Average}");
     Console.WriteLine($"Min: {statistics.Min}");
     Console.WriteLine($"Max: {statistics.Max}");

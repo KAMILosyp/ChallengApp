@@ -154,7 +154,7 @@ namespace ChallengeApp
                     break;
                 default:
                     throw new Exception("Invalid grade value");
-                    break;
+                    
             }
             return statistics;
         }
