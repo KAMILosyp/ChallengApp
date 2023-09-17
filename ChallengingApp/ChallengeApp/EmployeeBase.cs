@@ -1,9 +1,17 @@
 ﻿
 
+using System.Diagnostics;
+
 namespace ChallengeApp
 {
     public abstract class EmployeeBase : IEmployee
-    { 
+    {
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+       
+        public event GradeAddedDelegate GradeAdded;
+
+        private List<float> grades = new List<float>();
+
         public EmployeeBase(string name, string surname)
         {
             this.Name = name;
@@ -17,8 +25,7 @@ namespace ChallengeApp
         public abstract void AddGrade(char grade);
        
         public abstract void AddGrade(float grade);
-
-
+       
         public abstract void AddGrade(string grade);
 
 
