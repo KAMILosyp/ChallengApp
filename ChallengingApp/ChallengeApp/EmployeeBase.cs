@@ -1,6 +1,5 @@
 ﻿
 
-using System.Diagnostics;
 
 namespace ChallengeApp
 {
@@ -8,9 +7,7 @@ namespace ChallengeApp
     {
         public delegate void GradeAddedDelegate(object sender, EventArgs args);
        
-        public event GradeAddedDelegate GradeAdded;
-
-        private List<float> grades = new List<float>();
+        public abstract event GradeAddedDelegate GradeAdded;
 
         public EmployeeBase(string name, string surname)
         {

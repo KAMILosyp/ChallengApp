@@ -1,14 +1,14 @@
 ﻿
 
 using ChallengeApp;
-using System;
+
 
 
 
 Console.WriteLine(" HI WELCOME IN OUR PROGRAMM GRADESTAT2.0");
 Console.WriteLine("****************************************");
 Console.WriteLine();
-Console.WriteLine("Please choose your grade from 1 to 6");
+Console.WriteLine("Please choose your grade ");
 
 
 var employee = new EmployeeInMemory("Kamil", "lolo");
@@ -20,7 +20,6 @@ void EmployeeGradeAdded(object sender, EventArgs args)
     Console.WriteLine("Dodano nową ocenę");
 }
 
-employee.AddGrade(0.6f);
 
 
 while (true)
